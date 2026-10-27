@@ -1,3 +1,4 @@
-# s06-mcp-client
+# Section 6 — MCP Client & Agent Loop
 
-Code for this section is added as lectures are published.
+Course companion code and notes for this section.
+See the top-level [README](../README.md) and [ETHICS.md](../ETHICS.md).

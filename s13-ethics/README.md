@@ -1,3 +1,4 @@
-# s13-ethics
+# Section 13 — Ethics & Lab Hygiene
 
-Code for this section is added as lectures are published.
+Course companion code and notes for this section.
+See the top-level [README](../README.md) and [ETHICS.md](../ETHICS.md).
