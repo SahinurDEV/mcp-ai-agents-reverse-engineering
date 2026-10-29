@@ -1,0 +1,42 @@
+# compose.yaml: notes-mcp plus optional sidecars (profiles). This box has no bridge networking
+# (no iptables), so services share the host network and the server binds 127.0.0.1 only.
+services:
+  notes:
+    image: notes-mcp:1.0.0
+    build: .
+    network_mode: host
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    environment:
+      LOG_LEVEL: INFO
+    volumes:
+      - notes-data:/data
+    restart: unless-stopped
+
+  smoke:                                   # optional: docker compose --profile check run --rm smoke
+    image: notes-mcp:1.0.0
+    profiles: [check]
+    network_mode: host
+    read_only: true
+    cap_drop: [ALL]
+    depends_on:
+      notes: {condition: service_healthy}
+    volumes:
+      - ./smoke_client.py:/app/smoke_client.py:ro
+    entrypoint: ["python", "/app/smoke_client.py"]
+
+  backup:                                  # optional: docker compose --profile backup run --rm backup
+    image: python:3.13-slim
+    user: "${HOST_UID:-1000}"                # write backups as you, not root
+    profiles: [backup]
+    network_mode: none
+    read_only: true
+    cap_drop: [ALL]
+    volumes:
+      - notes-data:/data:ro
+      - ./backups:/backups
+    entrypoint: ["python", "-c", "import shutil,time; print(shutil.make_archive(f'/backups/notes-{time.strftime(\"%Y%m%d-%H%M%S\")}', 'gztar', '/data'))"]
+
+volumes:
+  notes-data:
