@@ -1,0 +1,5 @@
+a490fe0ce9464efb84f634098cf1035421e8c7d09999429a0d34152e2224a858 course ../crackme/bin/l1_hello
+33e0ffa095baa2e5fbf78ee56e842b481cb4ac594dec8fddaf41e1d77901eb2a course ../crackme/bin/l2_xor
+0888b8ad91f29048ec8a47ca0c025b7e7a0258e12de89aed00685d01e2b2de98 course ../crackme/bin/l3_serial
+7301705df3cc41057801390c09774afb0b96ff2a032403c7b4ea4708eb5245a9 course ../crackme/bin/l4_nested
+7c31be4a26146d656804b4443815193fff001287d63d60fad5ebd930ac462440 course probe/probe
