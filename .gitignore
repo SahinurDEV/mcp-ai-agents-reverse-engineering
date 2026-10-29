@@ -18,3 +18,7 @@ s08-security/notes/
 s08-security/leaked.txt
 s08-security/tools.lock
 s08-security/__pycache__/
+s09-auth/.env
+s09-auth/notes/
+s09-auth/server.log
+s09-auth/__pycache__/
