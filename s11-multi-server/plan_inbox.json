@@ -1,0 +1,6 @@
+[
+ ["files__read_text_file", {"path": "draft.txt"}],
+ ["notes__notes_create",   {"title": "Meeting", "body": "$1"}],
+ ["git__git_add",          {"repo_path": "work/notes", "files": ["meeting.md"]}],
+ ["git__git_commit",       {"repo_path": "work/notes", "message": "Add meeting note from inbox"}]
+]

@@ -1,0 +1,6 @@
+[
+ ["team__notes_get",     {"note_id": "standup"}],
+ ["notes__notes_create", {"title": "Standup", "body": "$1"}],
+ ["git__git_add",        {"repo_path": "work/notes", "files": ["standup.md"]}],
+ ["git__git_commit",     {"repo_path": "work/notes", "message": "Add standup note"}]
+]

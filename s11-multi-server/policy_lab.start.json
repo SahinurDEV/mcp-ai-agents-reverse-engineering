@@ -1,0 +1,9 @@
+{
+ "allow": {
+  "notes": ["notes_*"],
+  "files": ["read_text_file", "list_directory", "write_file", "edit_file", "move_file"],
+  "git":   ["git_*"]
+ },
+ "untrusted": [],
+ "no_write_after_untrusted": []
+}

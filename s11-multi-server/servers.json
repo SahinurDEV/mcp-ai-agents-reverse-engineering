@@ -1,0 +1,6 @@
+{
+ "notes": {"command": "python3", "args": ["notes_mcp.py"], "env": {"NOTES_DIR": "work/notes"}},
+ "team":  {"command": "python3", "args": ["team_notes.py"]},
+ "files": {"command": "npx", "args": ["-y", "@modelcontextprotocol/server-filesystem@2.1.0", "work/inbox"]},
+ "git":   {"command": "uvx", "args": ["mcp-server-git@2026.10.28", "--repository", "work/notes"]}
+}
