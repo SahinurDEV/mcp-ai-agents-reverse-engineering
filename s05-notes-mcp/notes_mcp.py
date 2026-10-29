@@ -58,7 +58,8 @@ def notes_get(note_id: str) -> str:
     """Return the full Markdown text of one note."""
     path = safe_path(note_id)
     if not path.exists():
-        raise ToolError(f"no note '{note_id}'; call notes_list to see ids")
+        close = [i for i in notes_list() if note_id in i or i in note_id][:3]
+        raise ToolError(f"no note '{note_id}'" + (f"; did you mean {', '.join(close)}?" if close else "; call notes_list to see ids"))
     return path.read_text()
 
 
