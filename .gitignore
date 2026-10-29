@@ -22,3 +22,6 @@ s09-auth/.env
 s09-auth/notes/
 s09-auth/server.log
 s09-auth/__pycache__/
+s10-testing-ci/__pycache__/
+s10-testing-ci/tests/__pycache__/
+.pytest_cache/

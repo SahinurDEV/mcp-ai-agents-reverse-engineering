@@ -1,0 +1,29 @@
+name: notes-mcp CI
+on:
+  push:
+    paths: ["s10-testing-ci/**", ".github/workflows/s10-notes-ci.yml"]
+  pull_request:
+    paths: ["s10-testing-ci/**"]
+permissions:
+  contents: read                      # this job only reads the repo; no secrets are used
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: s10-testing-ci
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - name: Install pinned dependencies
+        run: pip install -r requirements.txt
+      - name: Unit, contract and security tests (in-process)
+        run: python -m pytest -q
+      - name: Black-box smoke test with the Inspector CLI
+        run: ./smoke.sh

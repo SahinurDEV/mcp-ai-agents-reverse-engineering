@@ -1,0 +1,151 @@
+{
+ "notes_create": {
+  "description": "Create a note. Returns its id. Fails if a note with the same id exists.",
+  "inputSchema": {
+   "properties": {
+    "body": {
+     "title": "Body",
+     "type": "string"
+    },
+    "title": {
+     "title": "Title",
+     "type": "string"
+    }
+   },
+   "required": [
+    "title",
+    "body"
+   ],
+   "title": "notes_createArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "uri": {
+     "title": "Uri",
+     "type": "string"
+    }
+   },
+   "required": [
+    "id",
+    "uri"
+   ],
+   "title": "Created",
+   "type": "object"
+  }
+ },
+ "notes_get": {
+  "description": "Return the full Markdown text of one note.",
+  "inputSchema": {
+   "properties": {
+    "note_id": {
+     "title": "Note Id",
+     "type": "string"
+    }
+   },
+   "required": [
+    "note_id"
+   ],
+   "title": "notes_getArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "title": "Result",
+     "type": "string"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "notes_getOutput",
+   "type": "object"
+  }
+ },
+ "notes_list": {
+  "description": "List all note ids, sorted.",
+  "inputSchema": {
+   "properties": {},
+   "title": "notes_listArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Result",
+     "type": "array"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "notes_listOutput",
+   "type": "object"
+  }
+ },
+ "notes_search": {
+  "description": "Case-insensitive search over note text. Returns id and the first matching line.",
+  "inputSchema": {
+   "properties": {
+    "limit": {
+     "default": 5,
+     "title": "Limit",
+     "type": "integer"
+    },
+    "query": {
+     "title": "Query",
+     "type": "string"
+    }
+   },
+   "required": [
+    "query"
+   ],
+   "title": "notes_searchArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "$defs": {
+    "Hit": {
+     "properties": {
+      "id": {
+       "title": "Id",
+       "type": "string"
+      },
+      "line": {
+       "title": "Line",
+       "type": "string"
+      }
+     },
+     "required": [
+      "id",
+      "line"
+     ],
+     "title": "Hit",
+     "type": "object"
+    }
+   },
+   "properties": {
+    "result": {
+     "items": {
+      "$ref": "#/$defs/Hit"
+     },
+     "title": "Result",
+     "type": "array"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "notes_searchOutput",
+   "type": "object"
+  }
+ }
+}
