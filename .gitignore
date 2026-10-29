@@ -8,3 +8,9 @@ node_modules/
 s05-notes-mcp/notes/
 *.jsonl
 s06-mcp-client/notes/
+s07-hosts/notes/
+s07-hosts/proj/
+s07-hosts/broken/
+s07-hosts/sandbox/
+s07-hosts/*.json
+!s07-hosts/package.json
