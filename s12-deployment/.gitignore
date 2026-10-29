@@ -1,5 +1,4 @@
 dist/
 backups/
 __pycache__/
-lab/.orig/
 *.log
