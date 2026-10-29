@@ -1,7 +1,7 @@
 """Lab 3.8 solution: calculator tools plus quote resources."""
 import random
 from mcp.server import MCPServer
-from mcp.server.mcpserver.exceptions import ToolError
+from mcp.server.mcpserver.exceptions import ResourceError, ToolError
 
 mcp = MCPServer("calc-quotes")
 
@@ -31,6 +31,8 @@ def random_quote() -> str:
 @mcp.resource("quote://{index}")
 def quote_by_index(index: int) -> str:
     """Quote number index (0-based) from the list."""
+    if not 0 <= index < len(QUOTES):
+        raise ResourceError(f"index must be 0 to {len(QUOTES) - 1}")
     return QUOTES[index]
 
 if __name__ == "__main__":

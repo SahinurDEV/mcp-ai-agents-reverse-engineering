@@ -3,3 +3,6 @@ __pycache__/
 .venv/
 notes_data/
 *.pyc
+node_modules/
+.pytest_cache/
+s05-notes-mcp/notes/

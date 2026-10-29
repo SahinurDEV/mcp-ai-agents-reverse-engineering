@@ -1,0 +1,6 @@
+from mcp import Client
+from notes_server import mcp
+
+async def test_add():
+    async with Client(mcp) as c:
+        assert (await c.call_tool("add", {"a": 2, "b": 3})).structured_content == {"result": 5}

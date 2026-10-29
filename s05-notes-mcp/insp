@@ -1,0 +1,3 @@
+#!/bin/sh
+# insp: run one Inspector CLI request against notes_mcp.py (NOTES_DIR defaults to ./notes)
+exec npx --yes @modelcontextprotocol/inspector --cli -e NOTES_DIR="${NOTES_DIR:-notes}" python3 notes_mcp.py "$@" 2>/dev/null

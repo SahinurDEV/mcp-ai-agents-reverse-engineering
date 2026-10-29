@@ -48,7 +48,7 @@ async def serve():
         time.sleep(0.5)
     async with async_playwright() as p:
         b = await p.chromium.launch(executable_path="/usr/bin/google-chrome", headless=HEADLESS,
-            args=["--window-position=0,0", "--window-size=1920,1200", "--no-first-run",
+            args=["--window-position=0,0", "--window-size=1920,1109", "--no-first-run",
                   "--disable-infobars", "--app=" + url])
         ctx = b.contexts[0] if b.contexts else await b.new_context(no_viewport=True)
         pg = ctx.pages[0] if ctx.pages else await ctx.new_page()
