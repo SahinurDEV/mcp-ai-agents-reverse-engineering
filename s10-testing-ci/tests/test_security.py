@@ -18,4 +18,5 @@ async def test_poisoned_fixture_is_caught():
     from tests import poisoned_fixture
     async with Client(poisoned_fixture.mcp) as c:
         tools = {t.name: redflags.flags(t) for t in (await c.list_tools()).tools}
-    assert len(tools["add"]) >= 3, f"scanner missed the poisoned tool: {tools['add']}"
+    missed = set(redflags.RED_FLAGS) - set(tools["add"])     # the fixture trips every rule; each rule must still fire
+    assert not missed, f"scanner rules no longer fire on the poisoned fixture: {sorted(missed)}"
