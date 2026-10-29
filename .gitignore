@@ -14,3 +14,7 @@ s07-hosts/broken/
 s07-hosts/sandbox/
 s07-hosts/*.json
 !s07-hosts/package.json
+s08-security/notes/
+s08-security/leaked.txt
+s08-security/tools.lock
+s08-security/__pycache__/
