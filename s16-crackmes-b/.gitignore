@@ -1,0 +1,8 @@
+inbox/
+logs/
+site/*.tar.gz
+vendor/dist/
+vendor/build/
+*.jsonl
+__pycache__/
+vendor/out/

@@ -1,0 +1,2 @@
+#!/bin/sh
+exec python3 "$(dirname "$0")/../s14-re-toolkit/call.py" "$@" 2>/dev/null

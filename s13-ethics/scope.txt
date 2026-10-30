@@ -9,3 +9,5 @@ b1cfc75644b050bd4213c8c9809d96211f66c9d204a4a6e1e5ceecc939820429 course ../s14-r
 4a00ed5241bbe49617354ad8a97065524ffa3380b0cb6557d7762fe28791c546 course ../s15-crackmes-a/bin/cm_xor
 b7f602667f137a11919adf9e5142d6d070f586606d7baa378f211ed9dfe5422e course ../s15-crackmes-a/bin/cm_obfus
 7dafd59a04029a260586018ebcea32101f575ed3966567f4b178ef2f5c128c8d course ../s15-crackmes-a/bin/cm_strip
+455301f3f905415f98ba9fb2b844364e7493796266b41ea63f6b88c8c6a0f6e9 trackb-1.0(course-team) ../s16-crackmes-b/inbox/trackb-easy-1.0/tb_lic
+8524f406e19a292330fb7f92639ec76e2b4ba737a5571808e24ad9020c9fe928 trackb-1.0(course-team) ../s16-crackmes-b/inbox/trackb-easy-1.0/tb_maze
