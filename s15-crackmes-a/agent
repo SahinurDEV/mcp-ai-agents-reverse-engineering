@@ -1,0 +1,3 @@
+#!/bin/sh
+# agent BINARY "QUESTION" [--log F]: local model with the six read-only GhidraMCP tools
+exec python3 "$(dirname "$0")/../s14-re-toolkit/re_agent.py" "$@" 2>/dev/null

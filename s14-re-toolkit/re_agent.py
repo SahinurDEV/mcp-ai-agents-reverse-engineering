@@ -17,7 +17,7 @@ SYSTEM = ("You are a reverse-engineering assistant working on a binary the user 
 def chat(messages, tools):
     h = {"Authorization": f"Bearer {os.environ['LLM_API_KEY']}"} if os.environ.get("LLM_API_KEY") else {}
     r = httpx.post(f"{BASE}/chat/completions", headers=h, timeout=300,
-                   json={"model": MODEL, "messages": messages, "tools": tools, "temperature": 0, "seed": 7})
+                   json={"model": MODEL, "messages": messages, "tools": tools, "temperature": 0, "seed": 7, "max_tokens": 400})
     r.raise_for_status(); return r.json()["choices"][0]["message"]
 
 async def main():

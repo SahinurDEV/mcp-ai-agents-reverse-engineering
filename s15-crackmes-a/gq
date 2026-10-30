@@ -1,0 +1,3 @@
+#!/bin/sh
+# gq BINARY TOOL k=v [-- TOOL ...]: GhidraMCP calls in one headless session (server log hidden)
+exec python3 "$(dirname "$0")/../s14-re-toolkit/call.py" "$@" 2>/dev/null

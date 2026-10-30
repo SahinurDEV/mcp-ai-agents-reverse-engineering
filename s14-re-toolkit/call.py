@@ -29,6 +29,8 @@ async def main():
     else:
       params = StdioServerParameters(command=f"{HERE}/gm.sh", args=[binary, *os.environ.get("GM_ARGS", "").split()], env={"PATH": os.environ["PATH"], "HOME": os.environ["HOME"]})
     async with Client(params) as c:
+        if not calls:  # no tool given: list the server's tools and their argument names
+            for t in (await c.list_tools()).tools: print(t.name, " ".join(t.input_schema.get("properties", {})) if hasattr(t, "input_schema") else " ".join(t.inputSchema.get("properties", {})))
         for name, args in calls:
             try:
                 r = await c.call_tool(name, args)
@@ -36,7 +38,7 @@ async def main():
                 print(f"### {name} {json.dumps(args)}  [REFUSED] {e}"); continue
             text = "\n".join(getattr(x, "text", "") for x in r.content)
             print(f"### {name} {json.dumps(args)}{'  [ERROR]' if r.is_error else ''}")
-            try: d = json.loads(text); print(d.get("code") if isinstance(d, dict) and "code" in d else json.dumps(d, indent=1)[:3000])
-            except ValueError: print(text[:3000])
+            try: d = json.loads(text); print(d.get("code") if isinstance(d, dict) and "code" in d else json.dumps(d, indent=1)[:int(os.environ.get("MAXOUT", 3000))])
+            except ValueError: print(text[:int(os.environ.get("MAXOUT", 3000))])
 
 anyio.run(main)
