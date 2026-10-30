@@ -1,0 +1,11 @@
+--- toyapi.py	2026-10-30 10:52:26.500302821 +0600
++++ toyapi.py	2026-10-30 10:53:42.017925801 +0600
+@@ -33,7 +33,7 @@
+         if self.path == "/notes": return self.send(200, {"ids": [i for i, (o, _) in NOTES.items() if o == u]})
+         if self.path.startswith("/notes/") and self.path[7:].isdigit():
+             n = NOTES.get(int(self.path[7:]))
+-            if not n: return self.send(404, {"error": "no such note"})
++            if not n or n[0] != u: return self.send(404, {"error": "no such note"})   # fixed: same answer for missing and not-yours
+             return self.send(200, {"id": int(self.path[7:]), "text": n[1]})   # BUG (lab): no owner check
+         self.send(404, {"error": "not found"})
+ if __name__ == "__main__":
