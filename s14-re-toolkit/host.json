@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "ghidra-hello": {
+      "command": "/path/to/repo/s14-re-toolkit/gm.sh",
+      "args": ["/path/to/repo/s14-re-toolkit/hello"],
+      "env": {}
+    }
+  }
+}
