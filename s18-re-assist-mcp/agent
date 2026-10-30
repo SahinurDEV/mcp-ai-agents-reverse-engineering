@@ -1,0 +1,2 @@
+#!/bin/sh
+exec python3 "$(dirname "$0")/agent18.py" "$@" 2>/dev/null
