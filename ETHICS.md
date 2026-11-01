@@ -2,8 +2,8 @@
 
 The reverse engineering material in this repository is for **education on targets you are allowed to analyze**:
 
-- the course CrackMes in `s15-crackmes/` (written for this course),
-- crackmes.one challenges, within that site's rules,
+- the course CrackMes in `s15-crackmes-a/` and `s16-crackmes-b/` (written for this course),
+- practice sites such as crackmes.one, within their rules (not used in the course),
 - your own programs, APIs and MCP servers,
 - open-source software, within its license.
 

@@ -40,7 +40,10 @@ async def step(pg, name):
         await slow_type(pg.locator("input[placeholder='Enter name...']"), "mcp"); await pg.wait_for_timeout(500)
         await pg.get_by_role("button", name="Get Prompt").click(); await pg.wait_for_timeout(2000)
 
+READY = Path("/tmp/inspector_tour.ready")
+
 async def serve():
+    READY.unlink(missing_ok=True); CTL.write_text("")
     url = None
     for _ in range(60):
         m = re.search(r"http://127\.0\.0\.1:6274\?\S+", LOG.read_text() if LOG.exists() else "")
@@ -54,12 +57,12 @@ async def serve():
         pg = ctx.pages[0] if ctx.pages else await ctx.new_page()
         if pg.url in ("about:blank", ""): await pg.goto(url)
         await pg.wait_for_timeout(2500)
-        CTL.write_text("")
+        READY.write_text("ok")
         while True:
             s = CTL.read_text().strip() if CTL.exists() else ""
             if s:
                 CTL.write_text("")
-                if s == "close": break
+                if s == "close": READY.unlink(missing_ok=True); break
                 try: await step(pg, s)
                 except Exception as e: print("step failed", s, e, file=sys.stderr)
                 if HEADLESS: await pg.screenshot(path=f"/tmp/v2f/tour_{s}.png")
@@ -72,6 +75,9 @@ if __name__ == "__main__":
     if a == "serve":
         asyncio.run(serve())
     else:
+        for _ in range(300):  # wait until the browser is up, so the step is not lost
+            if READY.exists(): break
+            time.sleep(0.1)
         Path(f"/tmp/inspector_tour.{a}.done").unlink(missing_ok=True)
         CTL.write_text(a)
         for _ in range(200):

@@ -13,6 +13,8 @@ async def main():
         tools = sorted(t.name for t in (await c.list_tools()).tools)
         r = await c.call_tool("notes_get", {"note_id": "../etc/passwd"})
         print(f"server {c.server_info.name} {c.server_info.version}: {len(tools)} tools; traversal refused={r.is_error}")
-        sys.exit(0 if len(tools) == 4 and r.is_error else 1)
+        return len(tools) == 4 and r.is_error
 
-anyio.run(main)
+
+# exit outside the client's task group: sys.exit inside it surfaces as a BaseExceptionGroup traceback
+sys.exit(0 if anyio.run(main) else 1)
