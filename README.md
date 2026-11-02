@@ -38,3 +38,7 @@ cd s15-crackmes && make
 ```
 
 Read [ETHICS.md](ETHICS.md) before the reverse engineering sections. License: [MIT](LICENSE).
+
+## Practice
+- [Hands-on exercises for every section](EXERCISES.md)
+- [Troubleshooting](TROUBLESHOOTING.md)
