@@ -1,0 +1,5 @@
+{
+ "notes": {"command": "python3", "args": ["../s05-notes-mcp/ex_rename.py"], "env": {"NOTES_DIR": "work/notes"}},
+ "units": {"command": "python3", "args": ["../s03-python-sdk/ex_units.py"]},
+ "git":   {"command": "uvx", "args": ["mcp-server-git@2026.10.28", "--repository", "work/notes"]}
+}

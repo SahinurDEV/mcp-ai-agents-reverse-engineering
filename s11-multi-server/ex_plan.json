@@ -1,0 +1,6 @@
+[
+ ["notes__notes_rename", {"note_id": "readme", "new_id": "course-readme"}],
+ ["units__convert_units", {"value": 42.195, "from_unit": "km", "to_unit": "mi"}],
+ ["git__git_add",        {"repo_path": "work/notes", "files": ["readme.md", "course-readme.md"]}],
+ ["git__git_commit",     {"repo_path": "work/notes", "message": "Rename readme to course-readme"}]
+]

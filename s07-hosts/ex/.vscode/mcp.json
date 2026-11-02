@@ -1,0 +1,10 @@
+{
+  "servers": {
+    "notes-ex": {
+      "type": "stdio",
+      "command": "/workspace/mcp-course/.venv/bin/python3",
+      "args": ["${workspaceFolder}/../../s05-notes-mcp/ex_rename.py"],
+      "env": { "NOTES_DIR": "${workspaceFolder}/../../s07-hosts/notes" }
+    }
+  }
+}

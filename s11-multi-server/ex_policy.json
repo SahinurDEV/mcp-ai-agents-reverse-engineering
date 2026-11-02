@@ -1,0 +1,7 @@
+{
+ "allow": {
+  "notes": ["notes_list", "notes_get", "notes_rename"],
+  "units": ["convert_units"],
+  "git":   ["git_status", "git_add", "git_commit", "git_log"]
+ }
+}
