@@ -1,7 +1,7 @@
 """check_writeup.py WRITEUP BINARY: checks a writeup without revealing anything.
 Sections present, SHA-256 matches the binary, at least 3 addresses cited, a quoted code line,
 and the input after 'Password:' or 'Serial:' really makes the binary print Correct.
-Set RUNNER=../s13/sandbox.sh to run it in the Section 13 container instead of on the host."""
+Set RUNNER=../s13-ethics/sandbox.sh to run it in the Section 13 container instead of on the host."""
 import hashlib, os, re, subprocess, sys
 w, b = open(sys.argv[1]).read(), sys.argv[2]
 ok = True

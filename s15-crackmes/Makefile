@@ -1,5 +1,5 @@
 CC ?= gcc
-CFLAGS ?= -O0 -g -fno-stack-protector -no-pie
+CFLAGS ?= -O0 -g -fno-stack-protector -no-pie -fdebug-prefix-map=$(CURDIR)=.
 SRC := src
 BIN := bin
 

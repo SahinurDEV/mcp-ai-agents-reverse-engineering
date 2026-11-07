@@ -8,7 +8,7 @@ Six parts, each with a check that runs on your machine:
 | B | client / agent | `grounded.py LOG`: answer must quote a successful tool result from its own log |
 | C | deploy | `deploy/` packages the Section 9 token-gated server on the Section 12 image; 401 without token, scope refusal, read-only non-root |
 | D | re-assist-mcp | Section 18 gate tests |
-| E | writeups | three CrackMe writeups pass `s15/lab/check_writeup.py`; signed `s13/ethics/attestation.md` |
+| E | writeups | three CrackMe writeups pass `s15-crackmes-a/lab/check_writeup.py`; signed `s13-ethics/ethics/attestation.md` |
 | F | demo | `demo_checklist.md` fully ticked (7 items) |
 
     ./prep.sh          # build CrackMes, build + start notes-auth (random key in deploy/.env, gitignored)

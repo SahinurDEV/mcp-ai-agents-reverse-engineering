@@ -1,9 +1,9 @@
-a490fe0ce9464efb84f634098cf1035421e8c7d09999429a0d34152e2224a858 course ../crackme/bin/l1_hello
-33e0ffa095baa2e5fbf78ee56e842b481cb4ac594dec8fddaf41e1d77901eb2a course ../crackme/bin/l2_xor
-0888b8ad91f29048ec8a47ca0c025b7e7a0258e12de89aed00685d01e2b2de98 course ../crackme/bin/l3_serial
-7301705df3cc41057801390c09774afb0b96ff2a032403c7b4ea4708eb5245a9 course ../crackme/bin/l4_nested
+9a002ee245f53f387ed467002fa46fdad1333a1458e50a36d761818219ee901a course ../s15-crackmes/bin/l1_hello
+ade9672d338568a92d2d1722c6da03c779cda00588778fb689b5ec30c23ce8fb course ../s15-crackmes/bin/l2_xor
+05ed72ff23ef6aa6dc48a93c1c9a39cc53776f35ed4be80f9ae7b41370842434 course ../s15-crackmes/bin/l3_serial
+72c6e3b23be5d665b4f6ee32de78b494962ecd31718f0b76d883698cd87b85f0 course ../s15-crackmes/bin/l4_nested
 7c31be4a26146d656804b4443815193fff001287d63d60fad5ebd930ac462440 course probe/probe
-4db943f858b8b1e7e41078312613512422a5f9c347e2578a834f832833c05aed course ../s14-re-toolkit/hello
+25271c700b44010c873884ff8d9ac3ed9ff6e7484be07f3e9b2fe7650213ab3c course ../s14-re-toolkit/hello
 b1cfc75644b050bd4213c8c9809d96211f66c9d204a4a6e1e5ceecc939820429 course ../s14-re-toolkit/hello_s
 749e95b66d8bbf092f34c256c80f441519de6e84d1e10ffe401cef8f58288a9b course ../s15-crackmes-a/bin/cm_strcmp
 4a00ed5241bbe49617354ad8a97065524ffa3380b0cb6557d7762fe28791c546 course ../s15-crackmes-a/bin/cm_xor

@@ -9,11 +9,11 @@ from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import ToolAnnotations
 
 HERE = Path(__file__).resolve().parent
-S = HERE.parent.parent                                        # demos/v2
-BIN_DIR = Path(os.environ.get("RE_BIN_DIR", S / "s15/bin")).resolve()
-SCOPE = Path(os.environ.get("RE_SCOPE", S / "s13/scope.txt"))
-GM = os.environ.get("RE_GM", str(S / "s14/gm.sh"))
-SANDBOX = os.environ.get("RE_SANDBOX", str(S / "s13/sandbox.sh"))
+S = HERE.parent.parent                                        # repo root
+BIN_DIR = Path(os.environ.get("RE_BIN_DIR", S / "s15-crackmes-a/bin")).resolve()
+SCOPE = Path(os.environ.get("RE_SCOPE", S / "s13-ethics/scope.txt"))
+GM = os.environ.get("RE_GM", str(S / "s14-re-toolkit/gm.sh"))
+SANDBOX = os.environ.get("RE_SANDBOX", str(S / "s13-ethics/sandbox.sh"))
 LOG = os.environ.get("RE_LOG", "/tmp/re_assist.log")
 PROJECT = os.environ.get("RE_PROJECT", "/tmp/re_assist_proj")
 STUBS = re.compile(r"^(_init|_fini|_start|FUN_00101020|deregister_tm_clones|register_tm_clones|__do_global_dtors_aux|frame_dummy|_DT_INIT|_DT_FINI|_INIT_0|_FINI_0|entry)$")

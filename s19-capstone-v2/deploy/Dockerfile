@@ -6,4 +6,4 @@ RUN chown -R root:root /app && chmod -R a-w /app
 ENV NOTES_DIR=/data PYTHONUNBUFFERED=1
 USER app
 HEALTHCHECK NONE
-ENTRYPOINT ["python", "/app/s09/http_notes.py"]
+ENTRYPOINT ["python", "/app/s09-auth/http_notes.py"]

@@ -1,4 +1,4 @@
-"""Scope-gate tests for re-assist-mcp: run with  pytest -q s18/tests"""
+"""Scope-gate tests for re-assist-mcp: run with  pytest -q s18-re-assist-mcp/tests"""
 import os, shutil, sys, pytest
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "re_assist"))
 import server
@@ -19,6 +19,6 @@ def test_unpinned_copy_refused(tmp_path, monkeypatch):
 
 def test_symlink_out_of_folder_refused(tmp_path, monkeypatch):
     # link to a binary that IS pinned (Section 16's tb_lic) but lives outside the folder: only containment can stop it
-    d = tmp_path / "bin"; d.mkdir(); (d / "evil").symlink_to(server.S / "s16/inbox/trackb-easy-1.0/tb_lic")
+    d = tmp_path / "bin"; d.mkdir(); (d / "evil").symlink_to(server.S / "s16-crackmes-b/inbox/trackb-easy-1.0/tb_lic")
     monkeypatch.setattr(server, "BIN_DIR", d.resolve())
     with pytest.raises(ToolError, match="no binary"): server.gate("evil")
